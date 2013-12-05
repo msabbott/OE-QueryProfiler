@@ -1,0 +1,28 @@
+# Exclude build files
+*.r
+
+# Exclude Progress database files
+# EXCEPTIONS:
+# - INCLUDE *.st
+# - INCLUDE *.df (unless covered below)
+# --- EXCLUDE delta.df
+*_7.d*
+*.lk
+*.lg
+*.b[0-9]
+*.d[0-9]
+*.db
+*.lic
+delta.df
+
+# Exclude Progress Data files
+*.d
+
+# Exclude Progress temporary files
+*.ped
+*.dct
+protrace.*
+procore
+
+# Do not ignore the /bin directory, as it is required as a default directory
+!/bin
