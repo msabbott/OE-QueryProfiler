@@ -20,6 +20,8 @@ CLASS OETools.QueryProfiler.File:
     {OETools\QueryProfiler\ttSearchField.i      PROTECTED}
     {OETools\QueryProfiler\ttIndexSearchField.i PROTECTED}
     
+    {OETools\QueryProfiler\dsResults.i          PROTECTED}
+    
 	DEFINE PUBLIC PROPERTY FileName AS CHARACTER NO-UNDO 
 	GET.
 	SET. 
@@ -44,6 +46,16 @@ CLASS OETools.QueryProfiler.File:
 		COMPILE VALUE(FileName) XREF VALUE(GetXrefFileName()).
 
 		RETURN TRUE.
+
+	END METHOD.
+
+	/*------------------------------------------------------------------------------
+	 Purpose: Returns Dataset which contains the matched results
+	 Notes:
+	------------------------------------------------------------------------------*/
+	METHOD PUBLIC VOID FetchMatchedResults( OUTPUT DATASET dsResults ):
+		
+		RETURN.
 
 	END METHOD.
 
@@ -138,10 +150,9 @@ CLASS OETools.QueryProfiler.File:
 	END METHOD.
 
 	/*------------------------------------------------------------------------------
-	 Purpose:
+	 Purpose: Use data read in, identify the items to search
 	 Notes:
 	------------------------------------------------------------------------------*/
-
 	METHOD PUBLIC LOGICAL ProcessFile(  ):
 		
         DEFINE VARIABLE cMainFile      AS CHARACTER  NO-UNDO.
